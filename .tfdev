@@ -1,0 +1,5 @@
+version_info {
+  commit_var  =    "github.com/apparentlymart/terraform-provider-buildkite/internal/provider/gitCommit"
+  version_var =    "github.com/apparentlymart/terraform-provider-buildkite/internal/provider/versionBase"
+  prerelease_var = "github.com/apparentlymart/terraform-provider-buildkite/internal/provider/versionPrerelease"
+}
