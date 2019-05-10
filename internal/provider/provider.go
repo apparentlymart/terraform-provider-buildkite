@@ -24,7 +24,9 @@ func Provider() *tfsdk.Provider {
 		},
 		ConfigureFn: configure,
 
-		ManagedResourceTypes: map[string]tfsdk.ManagedResourceType{},
+		ManagedResourceTypes: map[string]tfsdk.ManagedResourceType{
+			"buildkite_pipeline": pipelineManagedResourceType(),
+		},
 
 		DataResourceTypes: map[string]tfsdk.DataResourceType{
 			"buildkite_organization": organizationDataResourceType(),
@@ -137,4 +139,15 @@ func apiResponseError(status string) tfsdk.Diagnostic {
 		Summary:  "Buildkite API request failed",
 		Detail:   fmt.Sprintf("The Buildkite API returned an unexpected response code: %s.", status),
 	}
+}
+
+func apiWriteErrors(resp *buildkite.Response, err error) tfsdk.Diagnostics {
+	var diags tfsdk.Diagnostics
+	if resp != nil && resp.StatusCode != http.StatusOK && resp.StatusCode != http.StatusCreated && resp.StatusCode != http.StatusAccepted {
+		diags = diags.Append(apiResponseError(resp.Status))
+	}
+	if err != nil {
+		diags = diags.Append(apiConnectionError(err))
+	}
+	return diags
 }
