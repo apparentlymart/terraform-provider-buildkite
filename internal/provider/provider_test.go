@@ -41,12 +41,3 @@ func TestMain(m *testing.M) {
 	testHelper.Close()
 	os.Exit(status)
 }
-
-func TestConfigure(t *testing.T) {
-	wd := testHelper.RequireNewWorkingDir(t)
-	defer wd.Close()
-
-	wd.RequireSetConfig(t, `provider "buildkite" {}`)
-	wd.RequireInit(t)
-	wd.RequireApply(t)
-}
