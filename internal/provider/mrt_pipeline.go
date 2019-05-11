@@ -3,6 +3,7 @@ package provider
 import (
 	"context"
 	"fmt"
+	"net/http"
 
 	tfsdk "github.com/apparentlymart/terraform-sdk"
 	"github.com/apparentlymart/terraform-sdk/tfobj"
@@ -25,6 +26,8 @@ type pipelineMRT struct {
 	// TODO: VCS-provider-specific settings.
 
 	Steps []pipelineMRTStep `cty:"step"`
+
+	Organization *string `cty:"organization"`
 }
 
 type pipelineMRTStep struct {
@@ -93,6 +96,10 @@ func pipelineManagedResourceType() tfsdk.ManagedResourceType {
 					Type:     cty.String,
 					Computed: true,
 				},
+				"organization": {
+					Type:     cty.String,
+					Computed: true,
+				},
 			},
 			NestedBlockTypes: map[string]*tfschema.NestedBlockType{
 				"step": {
@@ -132,6 +139,12 @@ func pipelineManagedResourceType() tfsdk.ManagedResourceType {
 			moreDiags := validateStepBlocks(plan.BlockList("step"))
 			diags = diags.Append(moreDiags.UnderPath(cty.GetAttrPath("step")))
 
+			newOrgSlug := cty.StringVal(*meta.org.Slug)
+			plan.SetAttr("organization", newOrgSlug)
+			if plan.Action() != tfobj.Create && plan.AttrHasChange("organization") {
+				plan.SetAttrRequiresReplacement("organization")
+			}
+
 			return plan.ObjectVal(), plan.RequiresReplace(), diags
 		},
 
@@ -145,13 +158,46 @@ func pipelineManagedResourceType() tfsdk.ManagedResourceType {
 				return obj, diags
 			}
 
-			return buildMRTPipelineFromAPI(created), diags
+			return buildMRTPipelineFromAPI(created, meta.org), diags
 		},
 
-		UpdateFn: func(ctx context.Context, meta *Meta, obj *pipelineMRT) (*pipelineMRT, tfsdk.Diagnostics) {
+		ReadFn: func(ctx context.Context, meta *Meta, obj *pipelineMRT) (*pipelineMRT, tfsdk.Diagnostics) {
 			var diags tfsdk.Diagnostics
 
-			return obj, diags
+			read, resp, err := meta.client.Pipelines.Get(*obj.Organization, *obj.Slug)
+			if resp != nil && resp.StatusCode == http.StatusNotFound {
+				return nil, diags
+			}
+			diags = diags.Append(apiWriteErrors(resp, err))
+			if diags.HasErrors() {
+				return obj, diags
+			}
+
+			return buildMRTPipelineFromAPI(read, meta.org), diags
+		},
+
+		UpdateFn: func(ctx context.Context, meta *Meta, prior, new *pipelineMRT) (*pipelineMRT, tfsdk.Diagnostics) {
+			var diags tfsdk.Diagnostics
+
+			diags = diags.Append(tfsdk.Diagnostic{
+				Severity: tfsdk.Error,
+				Summary:  "Update not implemented",
+				Detail:   "Updating is not yet implemented for buildkite_pipeline.",
+			})
+
+			return new, diags
+		},
+
+		DeleteFn: func(ctx context.Context, meta *Meta, obj *pipelineMRT) (*pipelineMRT, tfsdk.Diagnostics) {
+			var diags tfsdk.Diagnostics
+
+			resp, err := meta.client.Pipelines.Delete(*obj.Organization, *obj.Slug)
+			diags = diags.Append(apiWriteErrors(resp, err))
+			if diags.HasErrors() {
+				return obj, diags
+			}
+
+			return nil, diags
 		},
 	})
 }
@@ -180,7 +226,7 @@ func buildAPICreatePipelineFromMRT(obj *pipelineMRT) *buildkite.CreatePipeline {
 	return ret
 }
 
-func buildMRTPipelineFromAPI(pipeline *buildkite.Pipeline) *pipelineMRT {
+func buildMRTPipelineFromAPI(pipeline *buildkite.Pipeline, org *buildkite.Organization) *pipelineMRT {
 	ret := &pipelineMRT{
 		ID:         pipeline.ID,
 		URL:        pipeline.URL,
@@ -191,6 +237,8 @@ func buildMRTPipelineFromAPI(pipeline *buildkite.Pipeline) *pipelineMRT {
 		BuildsURL:  pipeline.BuildsURL,
 		BadgeURL:   pipeline.BadgeURL,
 		Steps:      make([]pipelineMRTStep, 0, len(pipeline.Steps)),
+
+		Organization: org.Slug,
 	}
 	createdTime := pipeline.CreatedAt.Format(timestampFormat)
 	ret.CreatedTime = &createdTime

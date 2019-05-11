@@ -1,0 +1,453 @@
+2019/05/10 18:36:54 [INFO] Terraform version: 0.12.0 rc1 
+2019/05/10 18:36:54 [INFO] Go runtime version: go1.12.1
+2019/05/10 18:36:54 [INFO] CLI args: []string{"/home/mart/go/bin/terraform", "apply"}
+2019/05/10 18:36:54 [DEBUG] Attempting to open CLI config file: /home/mart/.terraformrc
+2019/05/10 18:36:54 Loading CLI configuration from /home/mart/.terraformrc
+2019/05/10 18:36:54 [INFO] CLI command args: []string{"apply"}
+2019/05/10 18:36:54 [TRACE] Meta.Backend: no config given or present on disk, so returning nil config
+2019/05/10 18:36:54 [TRACE] Meta.Backend: backend has not previously been initialized in this working directory
+2019/05/10 18:36:54 [DEBUG] New state was assigned lineage "96b866e1-73c3-7bc5-9bbc-9609a62e9466"
+2019/05/10 18:36:54 [TRACE] Meta.Backend: using default local state only (no backend configuration, and no existing initialized backend)
+2019/05/10 18:36:54 [TRACE] Meta.Backend: instantiated backend of type <nil>
+2019/05/10 18:36:54 [DEBUG] checking for provider in "."
+2019/05/10 18:36:54 [DEBUG] checking for provider in "/home/mart/go/bin"
+2019/05/10 18:36:54 [WARN] found legacy provider "terraform-provider-buildkite"
+2019/05/10 18:36:54 [WARN] found legacy provider "terraform-provider-pulumi"
+2019/05/10 18:36:54 [WARN] found legacy provider "terraform-provider-test"
+2019/05/10 18:36:54 [WARN] found legacy provider "terraform-provider-testing"
+2019/05/10 18:36:54 [DEBUG] checking for provider in ".terraform/plugins/linux_amd64"
+2019/05/10 18:36:54 [DEBUG] found valid plugin: "testing", "0.0.0", "/home/mart/go/bin/terraform-provider-testing"
+2019/05/10 18:36:54 [DEBUG] found valid plugin: "buildkite", "0.0.0", "/home/mart/go/bin/terraform-provider-buildkite"
+2019/05/10 18:36:54 [DEBUG] found valid plugin: "pulumi", "0.0.0", "/home/mart/go/bin/terraform-provider-pulumi"
+2019/05/10 18:36:54 [DEBUG] found valid plugin: "test", "0.0.0", "/home/mart/go/bin/terraform-provider-test"
+2019/05/10 18:36:54 [DEBUG] checking for provisioner in "."
+2019/05/10 18:36:54 [DEBUG] checking for provisioner in "/home/mart/go/bin"
+2019/05/10 18:36:54 [DEBUG] checking for provisioner in ".terraform/plugins/linux_amd64"
+2019/05/10 18:36:54 [TRACE] Meta.Backend: backend <nil> does not support operations, so wrapping it in a local backend
+2019/05/10 18:36:54 [INFO] backend/local: starting Apply operation
+2019/05/10 18:36:54 [TRACE] backend/local: requesting state manager for workspace "default"
+2019/05/10 18:36:54 [TRACE] backend/local: state manager for workspace "default" will:
+ - read initial snapshot from terraform.tfstate
+ - write new snapshots to terraform.tfstate
+ - create any backup at terraform.tfstate.backup
+2019/05/10 18:36:54 [TRACE] backend/local: requesting state lock for workspace "default"
+2019/05/10 18:36:54 [TRACE] statemgr.Filesystem: preparing to manage state snapshots at terraform.tfstate
+2019/05/10 18:36:54 [TRACE] statemgr.Filesystem: existing snapshot has lineage "927e0de4-4799-5da4-341f-c6e2784fe51a" serial 5
+2019/05/10 18:36:54 [TRACE] statemgr.Filesystem: locking terraform.tfstate using fcntl flock
+2019/05/10 18:36:54 [TRACE] statemgr.Filesystem: writing lock metadata to .terraform.tfstate.lock.info
+2019/05/10 18:36:54 [TRACE] backend/local: reading remote state for workspace "default"
+2019/05/10 18:36:54 [TRACE] statemgr.Filesystem: reading latest snapshot from terraform.tfstate
+2019/05/10 18:36:54 [TRACE] statemgr.Filesystem: read snapshot with lineage "927e0de4-4799-5da4-341f-c6e2784fe51a" serial 5
+2019/05/10 18:36:54 [TRACE] backend/local: retrieving local state snapshot for workspace "default"
+2019/05/10 18:36:54 [TRACE] backend/local: building context for current working directory
+2019/05/10 18:36:54 [TRACE] terraform.NewContext: starting
+2019/05/10 18:36:54 [TRACE] terraform.NewContext: resolving provider version selections
+2019/05/10 18:36:54 [TRACE] terraform.NewContext: loading provider schemas
+2019/05/10 18:36:54 [TRACE] LoadSchemas: retrieving schema for provider type "buildkite"
+2019-05-10T18:36:54.957-0700 [INFO]  plugin: configuring client automatic mTLS
+2019-05-10T18:36:54.996-0700 [DEBUG] plugin: starting plugin: path=/home/mart/go/bin/terraform-provider-buildkite args=[/home/mart/go/bin/terraform-provider-buildkite]
+2019-05-10T18:36:54.996-0700 [DEBUG] plugin: plugin started: path=/home/mart/go/bin/terraform-provider-buildkite pid=9517
+2019-05-10T18:36:54.996-0700 [DEBUG] plugin: waiting for RPC address: path=/home/mart/go/bin/terraform-provider-buildkite
+2019-05-10T18:36:55.004-0700 [INFO]  plugin.terraform-provider-buildkite: configuring server automatic mTLS: timestamp=2019-05-10T18:36:55.004-0700
+2019-05-10T18:36:55.046-0700 [DEBUG] plugin.terraform-provider-buildkite: plugin address: address=/tmp/plugin452907673 network=unix timestamp=2019-05-10T18:36:55.045-0700
+2019-05-10T18:36:55.046-0700 [DEBUG] plugin: using plugin: version=5
+2019/05/10 18:36:55 [TRACE] GRPCProvider: GetSchema
+2019/05/10 18:36:55 [TRACE] GRPCProvider: Close
+2019-05-10T18:36:55.126-0700 [DEBUG] plugin: plugin process exited: path=/home/mart/go/bin/terraform-provider-buildkite pid=9517
+2019-05-10T18:36:55.126-0700 [DEBUG] plugin: plugin exited
+2019/05/10 18:36:55 [TRACE] terraform.NewContext: complete
+2019/05/10 18:36:55 [TRACE] backend/local: finished building terraform.Context
+2019/05/10 18:36:55 [TRACE] backend/local: requesting interactive input, if necessary
+2019/05/10 18:36:55 [TRACE] Context.Input: Prompting for variables
+2019/05/10 18:36:55 [TRACE] Context.Input: Prompting for provider arguments
+2019/05/10 18:36:55 [TRACE] Context.Input: Provider provider.buildkite declared at main.tf:1,1-21
+2019/05/10 18:36:55 [TRACE] Context.Input: Input for provider.buildkite: map[string]cty.Value{}
+2019/05/10 18:36:55 [TRACE] backend/local: running validation operation
+2019/05/10 18:36:55 [INFO] terraform: building graph: GraphTypeValidate
+2019/05/10 18:36:55 [TRACE] Executing graph transform *terraform.ConfigTransformer
+2019/05/10 18:36:55 [TRACE] ConfigTransformer: Starting for path: 
+2019/05/10 18:36:55 [TRACE] Completed graph transform *terraform.ConfigTransformer with new graph:
+buildkite_pipeline.example - *terraform.NodeValidatableResource
+------
+2019/05/10 18:36:55 [TRACE] Executing graph transform *terraform.LocalTransformer
+2019/05/10 18:36:55 [TRACE] Completed graph transform *terraform.LocalTransformer (no changes)
+2019/05/10 18:36:55 [TRACE] Executing graph transform *terraform.OutputTransformer
+2019/05/10 18:36:55 [TRACE] Completed graph transform *terraform.OutputTransformer (no changes)
+2019/05/10 18:36:55 [TRACE] Executing graph transform *terraform.OrphanResourceInstanceTransformer
+2019/05/10 18:36:55 [TRACE] Completed graph transform *terraform.OrphanResourceInstanceTransformer (no changes)
+2019/05/10 18:36:55 [TRACE] Executing graph transform *terraform.StateTransformer
+2019/05/10 18:36:55 [TRACE] StateTransformer: creating nodes for deposed instance objects only
+2019/05/10 18:36:55 [TRACE] Completed graph transform *terraform.StateTransformer (no changes)
+2019/05/10 18:36:55 [TRACE] Executing graph transform *terraform.OrphanOutputTransformer
+2019/05/10 18:36:55 [TRACE] Completed graph transform *terraform.OrphanOutputTransformer (no changes)
+2019/05/10 18:36:55 [TRACE] Executing graph transform *terraform.AttachResourceConfigTransformer
+2019/05/10 18:36:55 [TRACE] AttachResourceConfigTransformer: attaching to "buildkite_pipeline.example" (*terraform.NodeValidatableResource) config from main.tf:9,1-40
+2019/05/10 18:36:55 [TRACE] Completed graph transform *terraform.AttachResourceConfigTransformer (no changes)
+2019/05/10 18:36:55 [TRACE] Executing graph transform *terraform.AttachStateTransformer
+2019/05/10 18:36:55 [TRACE] Completed graph transform *terraform.AttachStateTransformer (no changes)
+2019/05/10 18:36:55 [TRACE] Executing graph transform *terraform.RootVariableTransformer
+2019/05/10 18:36:55 [TRACE] Completed graph transform *terraform.RootVariableTransformer (no changes)
+2019/05/10 18:36:55 [TRACE] Executing graph transform *terraform.MissingProvisionerTransformer
+2019/05/10 18:36:55 [TRACE] Completed graph transform *terraform.MissingProvisionerTransformer (no changes)
+2019/05/10 18:36:55 [TRACE] Executing graph transform *terraform.ProvisionerTransformer
+2019/05/10 18:36:55 [TRACE] Completed graph transform *terraform.ProvisionerTransformer (no changes)
+2019/05/10 18:36:55 [TRACE] Executing graph transform *terraform.ModuleVariableTransformer
+2019/05/10 18:36:55 [TRACE] Completed graph transform *terraform.ModuleVariableTransformer (no changes)
+2019/05/10 18:36:55 [TRACE] Executing graph transform *terraform.graphTransformerMulti
+2019/05/10 18:36:55 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.ProviderConfigTransformer
+2019/05/10 18:36:55 [TRACE] ProviderConfigTransformer: attaching to "provider.buildkite" provider configuration from main.tf:1,1-21
+2019/05/10 18:36:55 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.ProviderConfigTransformer with new graph:
+buildkite_pipeline.example - *terraform.NodeValidatableResource
+provider.buildkite - *terraform.NodeApplyableProvider
+------
+2019/05/10 18:36:55 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.MissingProviderTransformer
+2019/05/10 18:36:55 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.MissingProviderTransformer (no changes)
+2019/05/10 18:36:55 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.ProviderTransformer
+2019/05/10 18:36:55 [TRACE] ProviderTransformer: buildkite_pipeline.example is provided by provider.buildkite or inherited equivalent
+2019/05/10 18:36:55 [TRACE] ProviderTransformer: exact match for provider.buildkite serving buildkite_pipeline.example
+2019/05/10 18:36:55 [DEBUG] ProviderTransformer: "buildkite_pipeline.example" (*terraform.NodeValidatableResource) needs provider.buildkite
+2019/05/10 18:36:55 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.ProviderTransformer with new graph:
+buildkite_pipeline.example - *terraform.NodeValidatableResource
+  provider.buildkite - *terraform.NodeApplyableProvider
+provider.buildkite - *terraform.NodeApplyableProvider
+------
+2019/05/10 18:36:55 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.PruneProviderTransformer
+2019/05/10 18:36:55 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.PruneProviderTransformer (no changes)
+2019/05/10 18:36:55 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.ParentProviderTransformer
+2019/05/10 18:36:55 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.ParentProviderTransformer (no changes)
+2019/05/10 18:36:55 [TRACE] Completed graph transform *terraform.graphTransformerMulti with new graph:
+buildkite_pipeline.example - *terraform.NodeValidatableResource
+  provider.buildkite - *terraform.NodeApplyableProvider
+provider.buildkite - *terraform.NodeApplyableProvider
+------
+2019/05/10 18:36:55 [TRACE] Executing graph transform *terraform.RemovedModuleTransformer
+2019/05/10 18:36:55 [TRACE] Completed graph transform *terraform.RemovedModuleTransformer (no changes)
+2019/05/10 18:36:55 [TRACE] Executing graph transform *terraform.AttachSchemaTransformer
+2019/05/10 18:36:55 [TRACE] AttachSchemaTransformer: attaching resource schema to buildkite_pipeline.example
+2019/05/10 18:36:55 [TRACE] AttachSchemaTransformer: attaching provider config schema to provider.buildkite
+2019/05/10 18:36:55 [TRACE] Completed graph transform *terraform.AttachSchemaTransformer (no changes)
+2019/05/10 18:36:55 [TRACE] Executing graph transform *terraform.ReferenceTransformer
+2019/05/10 18:36:55 [DEBUG] ReferenceTransformer: "buildkite_pipeline.example" references: []
+2019/05/10 18:36:55 [DEBUG] ReferenceTransformer: "provider.buildkite" references: []
+2019/05/10 18:36:55 [TRACE] Completed graph transform *terraform.ReferenceTransformer (no changes)
+2019/05/10 18:36:55 [TRACE] Executing graph transform *terraform.CountBoundaryTransformer
+2019/05/10 18:36:55 [TRACE] Completed graph transform *terraform.CountBoundaryTransformer with new graph:
+buildkite_pipeline.example - *terraform.NodeValidatableResource
+  provider.buildkite - *terraform.NodeApplyableProvider
+meta.count-boundary (EachMode fixup) - *terraform.NodeCountBoundary
+  buildkite_pipeline.example - *terraform.NodeValidatableResource
+  provider.buildkite - *terraform.NodeApplyableProvider
+provider.buildkite - *terraform.NodeApplyableProvider
+------
+2019/05/10 18:36:55 [TRACE] Executing graph transform *terraform.TargetsTransformer
+2019/05/10 18:36:55 [TRACE] Completed graph transform *terraform.TargetsTransformer (no changes)
+2019/05/10 18:36:55 [TRACE] Executing graph transform *terraform.ForcedCBDTransformer
+2019/05/10 18:36:55 [TRACE] Completed graph transform *terraform.ForcedCBDTransformer (no changes)
+2019/05/10 18:36:55 [TRACE] Executing graph transform *terraform.CloseProviderTransformer
+2019/05/10 18:36:55 [TRACE] Completed graph transform *terraform.CloseProviderTransformer with new graph:
+buildkite_pipeline.example - *terraform.NodeValidatableResource
+  provider.buildkite - *terraform.NodeApplyableProvider
+meta.count-boundary (EachMode fixup) - *terraform.NodeCountBoundary
+  buildkite_pipeline.example - *terraform.NodeValidatableResource
+  provider.buildkite - *terraform.NodeApplyableProvider
+provider.buildkite - *terraform.NodeApplyableProvider
+provider.buildkite (close) - *terraform.graphNodeCloseProvider
+  buildkite_pipeline.example - *terraform.NodeValidatableResource
+  provider.buildkite - *terraform.NodeApplyableProvider
+------
+2019/05/10 18:36:55 [TRACE] Executing graph transform *terraform.CloseProvisionerTransformer
+2019/05/10 18:36:55 [TRACE] Completed graph transform *terraform.CloseProvisionerTransformer (no changes)
+2019/05/10 18:36:55 [TRACE] Executing graph transform *terraform.RootTransformer
+2019/05/10 18:36:55 [TRACE] Completed graph transform *terraform.RootTransformer with new graph:
+buildkite_pipeline.example - *terraform.NodeValidatableResource
+  provider.buildkite - *terraform.NodeApplyableProvider
+meta.count-boundary (EachMode fixup) - *terraform.NodeCountBoundary
+  buildkite_pipeline.example - *terraform.NodeValidatableResource
+  provider.buildkite - *terraform.NodeApplyableProvider
+provider.buildkite - *terraform.NodeApplyableProvider
+provider.buildkite (close) - *terraform.graphNodeCloseProvider
+  buildkite_pipeline.example - *terraform.NodeValidatableResource
+  provider.buildkite - *terraform.NodeApplyableProvider
+root - terraform.graphNodeRoot
+  meta.count-boundary (EachMode fixup) - *terraform.NodeCountBoundary
+  provider.buildkite (close) - *terraform.graphNodeCloseProvider
+------
+2019/05/10 18:36:55 [TRACE] Executing graph transform *terraform.TransitiveReductionTransformer
+2019/05/10 18:36:55 [TRACE] Completed graph transform *terraform.TransitiveReductionTransformer with new graph:
+buildkite_pipeline.example - *terraform.NodeValidatableResource
+  provider.buildkite - *terraform.NodeApplyableProvider
+meta.count-boundary (EachMode fixup) - *terraform.NodeCountBoundary
+  buildkite_pipeline.example - *terraform.NodeValidatableResource
+provider.buildkite - *terraform.NodeApplyableProvider
+provider.buildkite (close) - *terraform.graphNodeCloseProvider
+  buildkite_pipeline.example - *terraform.NodeValidatableResource
+root - terraform.graphNodeRoot
+  meta.count-boundary (EachMode fixup) - *terraform.NodeCountBoundary
+  provider.buildkite (close) - *terraform.graphNodeCloseProvider
+------
+2019/05/10 18:36:55 [DEBUG] Starting graph walk: walkValidate
+2019/05/10 18:36:55 [TRACE] dag/walk: updating graph
+2019/05/10 18:36:55 [TRACE] dag/walk: added new vertex: "buildkite_pipeline.example"
+2019/05/10 18:36:55 [TRACE] dag/walk: added new vertex: "provider.buildkite"
+2019/05/10 18:36:55 [TRACE] dag/walk: added new vertex: "meta.count-boundary (EachMode fixup)"
+2019/05/10 18:36:55 [TRACE] dag/walk: added new vertex: "provider.buildkite (close)"
+2019/05/10 18:36:55 [TRACE] dag/walk: added new vertex: "root"
+2019/05/10 18:36:55 [TRACE] dag/walk: added edge: "root" waiting on "provider.buildkite (close)"
+2019/05/10 18:36:55 [TRACE] dag/walk: added edge: "buildkite_pipeline.example" waiting on "provider.buildkite"
+2019/05/10 18:36:55 [TRACE] dag/walk: added edge: "meta.count-boundary (EachMode fixup)" waiting on "buildkite_pipeline.example"
+2019/05/10 18:36:55 [TRACE] dag/walk: added edge: "provider.buildkite (close)" waiting on "buildkite_pipeline.example"
+2019/05/10 18:36:55 [TRACE] dag/walk: added edge: "root" waiting on "meta.count-boundary (EachMode fixup)"
+2019/05/10 18:36:55 [TRACE] dag/walk: dependencies changed for "root", sending new deps
+2019/05/10 18:36:55 [TRACE] dag/walk: dependencies changed for "buildkite_pipeline.example", sending new deps
+2019/05/10 18:36:55 [TRACE] dag/walk: dependencies changed for "meta.count-boundary (EachMode fixup)", sending new deps
+2019/05/10 18:36:55 [TRACE] dag/walk: dependencies changed for "provider.buildkite (close)", sending new deps
+2019/05/10 18:36:55 [TRACE] dag/walk: visiting "provider.buildkite"
+2019/05/10 18:36:55 [TRACE] vertex "provider.buildkite": starting visit (*terraform.NodeApplyableProvider)
+2019/05/10 18:36:55 [TRACE] vertex "provider.buildkite": evaluating
+2019/05/10 18:36:55 [TRACE] [walkValidate] Entering eval tree: provider.buildkite
+2019/05/10 18:36:55 [TRACE] <root>: eval: *terraform.EvalSequence
+2019/05/10 18:36:55 [TRACE] <root>: eval: *terraform.EvalInitProvider
+2019-05-10T18:36:55.128-0700 [INFO]  plugin: configuring client automatic mTLS
+2019-05-10T18:36:55.182-0700 [DEBUG] plugin: starting plugin: path=/home/mart/go/bin/terraform-provider-buildkite args=[/home/mart/go/bin/terraform-provider-buildkite]
+2019-05-10T18:36:55.182-0700 [DEBUG] plugin: plugin started: path=/home/mart/go/bin/terraform-provider-buildkite pid=9534
+2019-05-10T18:36:55.182-0700 [DEBUG] plugin: waiting for RPC address: path=/home/mart/go/bin/terraform-provider-buildkite
+2019-05-10T18:36:55.189-0700 [INFO]  plugin.terraform-provider-buildkite: configuring server automatic mTLS: timestamp=2019-05-10T18:36:55.189-0700
+2019-05-10T18:36:55.219-0700 [DEBUG] plugin.terraform-provider-buildkite: plugin address: address=/tmp/plugin175336921 network=unix timestamp=2019-05-10T18:36:55.219-0700
+2019-05-10T18:36:55.219-0700 [DEBUG] plugin: using plugin: version=5
+2019/05/10 18:36:55 [TRACE] BuiltinEvalContext: Initialized "buildkite" provider for provider.buildkite
+2019/05/10 18:36:55 [TRACE] <root>: eval: terraform.EvalNoop
+2019/05/10 18:36:55 [TRACE] <root>: eval: *terraform.EvalOpFilter
+2019/05/10 18:36:55 [TRACE] <root>: eval: *terraform.EvalSequence
+2019/05/10 18:36:55 [TRACE] <root>: eval: *terraform.EvalGetProvider
+2019/05/10 18:36:55 [TRACE] <root>: eval: *terraform.EvalValidateProvider
+2019/05/10 18:36:55 [TRACE] buildProviderConfig for provider.buildkite: using explicit config only
+2019/05/10 18:36:55 [TRACE] GRPCProvider: GetSchema
+2019/05/10 18:36:55 [TRACE] GRPCProvider: PrepareProviderConfig
+2019/05/10 18:36:55 [TRACE] <root>: eval: terraform.EvalNoop
+2019/05/10 18:36:55 [TRACE] <root>: eval: terraform.EvalNoop
+2019/05/10 18:36:55 [TRACE] [walkValidate] Exiting eval tree: provider.buildkite
+2019/05/10 18:36:55 [TRACE] vertex "provider.buildkite": visit complete
+2019/05/10 18:36:55 [TRACE] dag/walk: visiting "buildkite_pipeline.example"
+2019/05/10 18:36:55 [TRACE] vertex "buildkite_pipeline.example": starting visit (*terraform.NodeValidatableResource)
+2019/05/10 18:36:55 [TRACE] vertex "buildkite_pipeline.example": evaluating
+2019/05/10 18:36:55 [TRACE] [walkValidate] Entering eval tree: buildkite_pipeline.example
+2019/05/10 18:36:55 [TRACE] <root>: eval: *terraform.EvalSequence
+2019/05/10 18:36:55 [TRACE] <root>: eval: *terraform.EvalGetProvider
+2019/05/10 18:36:55 [TRACE] <root>: eval: *terraform.EvalValidateResource
+2019/05/10 18:36:55 [TRACE] GRPCProvider: ValidateResourceTypeConfig
+2019/05/10 18:36:55 [TRACE] [walkValidate] Exiting eval tree: buildkite_pipeline.example
+2019/05/10 18:36:55 [TRACE] vertex "buildkite_pipeline.example": visit complete
+2019/05/10 18:36:55 [TRACE] dag/walk: visiting "provider.buildkite (close)"
+2019/05/10 18:36:55 [TRACE] vertex "provider.buildkite (close)": starting visit (*terraform.graphNodeCloseProvider)
+2019/05/10 18:36:55 [TRACE] dag/walk: visiting "meta.count-boundary (EachMode fixup)"
+2019/05/10 18:36:55 [TRACE] vertex "meta.count-boundary (EachMode fixup)": starting visit (*terraform.NodeCountBoundary)
+2019/05/10 18:36:55 [TRACE] vertex "meta.count-boundary (EachMode fixup)": evaluating
+2019/05/10 18:36:55 [TRACE] vertex "provider.buildkite (close)": evaluating
+2019/05/10 18:36:55 [TRACE] [walkValidate] Entering eval tree: provider.buildkite (close)
+2019/05/10 18:36:55 [TRACE] <root>: eval: *terraform.EvalCloseProvider
+2019/05/10 18:36:55 [TRACE] GRPCProvider: Close
+2019/05/10 18:36:55 [TRACE] [walkValidate] Entering eval tree: meta.count-boundary (EachMode fixup)
+2019/05/10 18:36:55 [TRACE] <root>: eval: *terraform.EvalCountFixZeroOneBoundaryGlobal
+2019/05/10 18:36:55 [TRACE] [walkValidate] Exiting eval tree: meta.count-boundary (EachMode fixup)
+2019/05/10 18:36:55 [TRACE] vertex "meta.count-boundary (EachMode fixup)": visit complete
+2019-05-10T18:36:55.322-0700 [DEBUG] plugin: plugin process exited: path=/home/mart/go/bin/terraform-provider-buildkite pid=9534
+2019-05-10T18:36:55.322-0700 [DEBUG] plugin: plugin exited
+2019/05/10 18:36:55 [TRACE] [walkValidate] Exiting eval tree: provider.buildkite (close)
+2019/05/10 18:36:55 [TRACE] vertex "provider.buildkite (close)": visit complete
+2019/05/10 18:36:55 [TRACE] dag/walk: visiting "root"
+2019/05/10 18:36:55 [TRACE] vertex "root": starting visit (terraform.graphNodeRoot)
+2019/05/10 18:36:55 [TRACE] vertex "root": visit complete
+2019/05/10 18:36:55 [INFO] backend/local: apply calling Refresh
+2019/05/10 18:36:55 [INFO] terraform: building graph: GraphTypeRefresh
+2019/05/10 18:36:55 [TRACE] Executing graph transform *terraform.ConfigTransformer
+2019/05/10 18:36:55 [TRACE] ConfigTransformer: Starting for path: 
+2019/05/10 18:36:55 [TRACE] Completed graph transform *terraform.ConfigTransformer with new graph:
+buildkite_pipeline.example - *terraform.NodeRefreshableManagedResource
+------
+2019/05/10 18:36:55 [TRACE] Executing graph transform *terraform.ConfigTransformer
+2019/05/10 18:36:55 [TRACE] ConfigTransformer: Starting for path: 
+2019/05/10 18:36:55 [TRACE] Completed graph transform *terraform.ConfigTransformer (no changes)
+2019/05/10 18:36:55 [TRACE] Executing graph transform *terraform.OrphanResourceInstanceTransformer
+2019/05/10 18:36:55 [TRACE] Completed graph transform *terraform.OrphanResourceInstanceTransformer (no changes)
+2019/05/10 18:36:55 [TRACE] Executing graph transform *terraform.StateTransformer
+2019/05/10 18:36:55 [TRACE] StateTransformer: creating nodes for deposed instance objects only
+2019/05/10 18:36:55 [TRACE] Completed graph transform *terraform.StateTransformer (no changes)
+2019/05/10 18:36:55 [TRACE] Executing graph transform *terraform.AttachStateTransformer
+2019/05/10 18:36:55 [TRACE] Completed graph transform *terraform.AttachStateTransformer (no changes)
+2019/05/10 18:36:55 [TRACE] Executing graph transform *terraform.AttachResourceConfigTransformer
+2019/05/10 18:36:55 [TRACE] AttachResourceConfigTransformer: attaching to "buildkite_pipeline.example" (*terraform.NodeRefreshableManagedResource) config from main.tf:9,1-40
+2019/05/10 18:36:55 [TRACE] Completed graph transform *terraform.AttachResourceConfigTransformer (no changes)
+2019/05/10 18:36:55 [TRACE] Executing graph transform *terraform.RootVariableTransformer
+2019/05/10 18:36:55 [TRACE] Completed graph transform *terraform.RootVariableTransformer (no changes)
+2019/05/10 18:36:55 [TRACE] Executing graph transform *terraform.LocalTransformer
+2019/05/10 18:36:55 [TRACE] Completed graph transform *terraform.LocalTransformer (no changes)
+2019/05/10 18:36:55 [TRACE] Executing graph transform *terraform.OutputTransformer
+2019/05/10 18:36:55 [TRACE] Completed graph transform *terraform.OutputTransformer (no changes)
+2019/05/10 18:36:55 [TRACE] Executing graph transform *terraform.ModuleVariableTransformer
+2019/05/10 18:36:55 [TRACE] Completed graph transform *terraform.ModuleVariableTransformer (no changes)
+2019/05/10 18:36:55 [TRACE] Executing graph transform *terraform.graphTransformerMulti
+2019/05/10 18:36:55 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.ProviderConfigTransformer
+2019/05/10 18:36:55 [TRACE] ProviderConfigTransformer: attaching to "provider.buildkite" provider configuration from main.tf:1,1-21
+2019/05/10 18:36:55 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.ProviderConfigTransformer with new graph:
+buildkite_pipeline.example - *terraform.NodeRefreshableManagedResource
+provider.buildkite - *terraform.NodeApplyableProvider
+------
+2019/05/10 18:36:55 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.MissingProviderTransformer
+2019/05/10 18:36:55 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.MissingProviderTransformer (no changes)
+2019/05/10 18:36:55 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.ProviderTransformer
+2019/05/10 18:36:55 [TRACE] ProviderTransformer: buildkite_pipeline.example is provided by provider.buildkite or inherited equivalent
+2019/05/10 18:36:55 [TRACE] ProviderTransformer: exact match for provider.buildkite serving buildkite_pipeline.example
+2019/05/10 18:36:55 [DEBUG] ProviderTransformer: "buildkite_pipeline.example" (*terraform.NodeRefreshableManagedResource) needs provider.buildkite
+2019/05/10 18:36:55 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.ProviderTransformer with new graph:
+buildkite_pipeline.example - *terraform.NodeRefreshableManagedResource
+  provider.buildkite - *terraform.NodeApplyableProvider
+provider.buildkite - *terraform.NodeApplyableProvider
+------
+2019/05/10 18:36:55 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.PruneProviderTransformer
+2019/05/10 18:36:55 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.PruneProviderTransformer (no changes)
+2019/05/10 18:36:55 [TRACE] (graphTransformerMulti) Executing graph transform *terraform.ParentProviderTransformer
+2019/05/10 18:36:55 [TRACE] (graphTransformerMulti) Completed graph transform *terraform.ParentProviderTransformer (no changes)
+2019/05/10 18:36:55 [TRACE] Completed graph transform *terraform.graphTransformerMulti with new graph:
+buildkite_pipeline.example - *terraform.NodeRefreshableManagedResource
+  provider.buildkite - *terraform.NodeApplyableProvider
+provider.buildkite - *terraform.NodeApplyableProvider
+------
+2019/05/10 18:36:55 [TRACE] Executing graph transform *terraform.AttachSchemaTransformer
+2019/05/10 18:36:55 [TRACE] AttachSchemaTransformer: attaching resource schema to buildkite_pipeline.example
+2019/05/10 18:36:55 [TRACE] AttachSchemaTransformer: attaching provider config schema to provider.buildkite
+2019/05/10 18:36:55 [TRACE] Completed graph transform *terraform.AttachSchemaTransformer (no changes)
+2019/05/10 18:36:55 [TRACE] Executing graph transform *terraform.ReferenceTransformer
+2019/05/10 18:36:55 [DEBUG] ReferenceTransformer: "buildkite_pipeline.example" references: []
+2019/05/10 18:36:55 [DEBUG] ReferenceTransformer: "provider.buildkite" references: []
+2019/05/10 18:36:55 [TRACE] Completed graph transform *terraform.ReferenceTransformer (no changes)
+2019/05/10 18:36:55 [TRACE] Executing graph transform *terraform.TargetsTransformer
+2019/05/10 18:36:55 [TRACE] Completed graph transform *terraform.TargetsTransformer (no changes)
+2019/05/10 18:36:55 [TRACE] Executing graph transform *terraform.CloseProviderTransformer
+2019/05/10 18:36:55 [TRACE] Completed graph transform *terraform.CloseProviderTransformer with new graph:
+buildkite_pipeline.example - *terraform.NodeRefreshableManagedResource
+  provider.buildkite - *terraform.NodeApplyableProvider
+provider.buildkite - *terraform.NodeApplyableProvider
+provider.buildkite (close) - *terraform.graphNodeCloseProvider
+  buildkite_pipeline.example - *terraform.NodeRefreshableManagedResource
+  provider.buildkite - *terraform.NodeApplyableProvider
+------
+2019/05/10 18:36:55 [TRACE] Executing graph transform *terraform.RootTransformer
+2019/05/10 18:36:55 [TRACE] Completed graph transform *terraform.RootTransformer (no changes)
+2019/05/10 18:36:55 [TRACE] Executing graph transform *terraform.TransitiveReductionTransformer
+2019/05/10 18:36:55 [TRACE] Completed graph transform *terraform.TransitiveReductionTransformer with new graph:
+buildkite_pipeline.example - *terraform.NodeRefreshableManagedResource
+  provider.buildkite - *terraform.NodeApplyableProvider
+provider.buildkite - *terraform.NodeApplyableProvider
+provider.buildkite (close) - *terraform.graphNodeCloseProvider
+  buildkite_pipeline.example - *terraform.NodeRefreshableManagedResource
+------
+2019/05/10 18:36:55 [DEBUG] Starting graph walk: walkRefresh
+2019/05/10 18:36:55 [TRACE] dag/walk: updating graph
+2019/05/10 18:36:55 [TRACE] dag/walk: added new vertex: "provider.buildkite"
+2019/05/10 18:36:55 [TRACE] dag/walk: added new vertex: "provider.buildkite (close)"
+2019/05/10 18:36:55 [TRACE] dag/walk: added new vertex: "buildkite_pipeline.example"
+2019/05/10 18:36:55 [TRACE] dag/walk: added edge: "buildkite_pipeline.example" waiting on "provider.buildkite"
+2019/05/10 18:36:55 [TRACE] dag/walk: added edge: "provider.buildkite (close)" waiting on "buildkite_pipeline.example"
+2019/05/10 18:36:55 [TRACE] dag/walk: dependencies changed for "buildkite_pipeline.example", sending new deps
+2019/05/10 18:36:55 [TRACE] dag/walk: dependencies changed for "provider.buildkite (close)", sending new deps
+2019/05/10 18:36:55 [TRACE] dag/walk: visiting "provider.buildkite"
+2019/05/10 18:36:55 [TRACE] vertex "provider.buildkite": starting visit (*terraform.NodeApplyableProvider)
+2019/05/10 18:36:55 [TRACE] vertex "provider.buildkite": evaluating
+2019/05/10 18:36:55 [TRACE] [walkRefresh] Entering eval tree: provider.buildkite
+2019/05/10 18:36:55 [TRACE] <root>: eval: *terraform.EvalSequence
+2019/05/10 18:36:55 [TRACE] <root>: eval: *terraform.EvalInitProvider
+2019-05-10T18:36:55.323-0700 [INFO]  plugin: configuring client automatic mTLS
+2019-05-10T18:36:55.375-0700 [DEBUG] plugin: starting plugin: path=/home/mart/go/bin/terraform-provider-buildkite args=[/home/mart/go/bin/terraform-provider-buildkite]
+2019-05-10T18:36:55.376-0700 [DEBUG] plugin: plugin started: path=/home/mart/go/bin/terraform-provider-buildkite pid=9549
+2019-05-10T18:36:55.376-0700 [DEBUG] plugin: waiting for RPC address: path=/home/mart/go/bin/terraform-provider-buildkite
+2019-05-10T18:36:55.384-0700 [INFO]  plugin.terraform-provider-buildkite: configuring server automatic mTLS: timestamp=2019-05-10T18:36:55.384-0700
+2019-05-10T18:36:55.417-0700 [DEBUG] plugin.terraform-provider-buildkite: plugin address: address=/tmp/plugin328723140 network=unix timestamp=2019-05-10T18:36:55.417-0700
+2019-05-10T18:36:55.417-0700 [DEBUG] plugin: using plugin: version=5
+2019/05/10 18:36:55 [TRACE] BuiltinEvalContext: Initialized "buildkite" provider for provider.buildkite
+2019/05/10 18:36:55 [TRACE] <root>: eval: terraform.EvalNoop
+2019/05/10 18:36:55 [TRACE] <root>: eval: terraform.EvalNoop
+2019/05/10 18:36:55 [TRACE] <root>: eval: *terraform.EvalOpFilter
+2019/05/10 18:36:55 [TRACE] <root>: eval: *terraform.EvalSequence
+2019/05/10 18:36:55 [TRACE] <root>: eval: *terraform.EvalGetProvider
+2019/05/10 18:36:55 [TRACE] <root>: eval: *terraform.EvalOpFilter
+2019/05/10 18:36:55 [TRACE] <root>: eval: *terraform.EvalSequence
+2019/05/10 18:36:55 [TRACE] <root>: eval: *terraform.EvalConfigProvider
+2019/05/10 18:36:55 [TRACE] buildProviderConfig for provider.buildkite: using explicit config only
+2019/05/10 18:36:55 [TRACE] GRPCProvider: GetSchema
+2019/05/10 18:36:55 [TRACE] GRPCProvider: Configure
+2019-05-10T18:36:55.516-0700 [DEBUG] plugin.terraform-provider-buildkite: 2019/05/10 18:36:55 [INFO] Using API token from BUILDKITE_TOKEN environment variable
+2019-05-10T18:36:55.516-0700 [DEBUG] plugin.terraform-provider-buildkite: 2019/05/10 18:36:55 [TRACE] HTTP GET request to https://api.buildkite.com/v2/organizations/terraform-provider
+2019-05-10T18:36:55.983-0700 [DEBUG] plugin.terraform-provider-buildkite: 2019/05/10 18:36:55 [INFO] Organization "terraform-provider" ("Terraform Provider") has id "ec547865-d85c-4f6b-940e-8717a7603661"
+2019/05/10 18:36:55 [TRACE] [walkRefresh] Exiting eval tree: provider.buildkite
+2019/05/10 18:36:55 [TRACE] vertex "provider.buildkite": visit complete
+2019/05/10 18:36:55 [TRACE] dag/walk: visiting "buildkite_pipeline.example"
+2019/05/10 18:36:55 [TRACE] vertex "buildkite_pipeline.example": starting visit (*terraform.NodeRefreshableManagedResource)
+2019/05/10 18:36:55 [TRACE] vertex "buildkite_pipeline.example": expanding dynamic subgraph
+2019/05/10 18:36:55 [TRACE] Executing graph transform *terraform.ResourceCountTransformer
+2019/05/10 18:36:55 [TRACE] Completed graph transform *terraform.ResourceCountTransformer with new graph:
+buildkite_pipeline.example - *terraform.NodeRefreshableManagedResourceInstance
+------
+2019/05/10 18:36:55 [TRACE] Executing graph transform *terraform.OrphanResourceCountTransformer
+2019/05/10 18:36:55 [TRACE] Completed graph transform *terraform.OrphanResourceCountTransformer (no changes)
+2019/05/10 18:36:55 [TRACE] Executing graph transform *terraform.AttachStateTransformer
+2019/05/10 18:36:55 [TRACE] Completed graph transform *terraform.AttachStateTransformer (no changes)
+2019/05/10 18:36:55 [TRACE] Executing graph transform *terraform.TargetsTransformer
+2019/05/10 18:36:55 [TRACE] Completed graph transform *terraform.TargetsTransformer (no changes)
+2019/05/10 18:36:55 [TRACE] Executing graph transform *terraform.ReferenceTransformer
+2019/05/10 18:36:55 [DEBUG] ReferenceTransformer: "buildkite_pipeline.example" references: []
+2019/05/10 18:36:55 [TRACE] Completed graph transform *terraform.ReferenceTransformer (no changes)
+2019/05/10 18:36:55 [TRACE] Executing graph transform *terraform.RootTransformer
+2019/05/10 18:36:55 [TRACE] Completed graph transform *terraform.RootTransformer (no changes)
+2019/05/10 18:36:55 [TRACE] vertex "buildkite_pipeline.example": entering dynamic subgraph
+2019/05/10 18:36:55 [TRACE] dag/walk: updating graph
+2019/05/10 18:36:55 [TRACE] dag/walk: added new vertex: "buildkite_pipeline.example"
+2019/05/10 18:36:55 [TRACE] dag/walk: visiting "buildkite_pipeline.example"
+2019/05/10 18:36:55 [TRACE] vertex "buildkite_pipeline.example": starting visit (*terraform.NodeRefreshableManagedResourceInstance)
+2019/05/10 18:36:55 [TRACE] NodeRefreshableManagedResourceInstance: buildkite_pipeline.example will be refreshed
+2019/05/10 18:36:55 [TRACE] vertex "buildkite_pipeline.example": evaluating
+2019/05/10 18:36:55 [TRACE] [walkRefresh] Entering eval tree: buildkite_pipeline.example
+2019/05/10 18:36:55 [TRACE] <root>: eval: *terraform.EvalSequence
+2019/05/10 18:36:55 [TRACE] <root>: eval: *terraform.EvalGetProvider
+2019/05/10 18:36:55 [TRACE] <root>: eval: *terraform.EvalReadState
+2019/05/10 18:36:55 [TRACE] EvalReadState: reading state for buildkite_pipeline.example
+2019/05/10 18:36:55 [TRACE] <root>: eval: *terraform.EvalRefresh
+2019/05/10 18:36:55 [TRACE] GRPCProvider: ReadResource
+2019-05-10T18:36:55.988-0700 [DEBUG] plugin.terraform-provider-buildkite: panic: runtime error: invalid memory address or nil pointer dereference
+2019-05-10T18:36:55.988-0700 [DEBUG] plugin.terraform-provider-buildkite: [signal SIGSEGV: segmentation violation code=0x1 addr=0x8 pc=0x994244]
+2019-05-10T18:36:55.988-0700 [DEBUG] plugin.terraform-provider-buildkite: 
+2019-05-10T18:36:55.988-0700 [DEBUG] plugin.terraform-provider-buildkite: goroutine 77 [running]:
+2019-05-10T18:36:55.988-0700 [DEBUG] plugin.terraform-provider-buildkite: github.com/apparentlymart/terraform-provider-buildkite/internal/provider.pipelineManagedResourceType.func4(0xbde680, 0xc000157f00, 0xc0004fec00, 0xc0000fc080, 0x0, 0x0, 0x0, 0x0)
+2019-05-10T18:36:55.988-0700 [DEBUG] plugin.terraform-provider-buildkite: 	/home/mart/Devel/terraform-provider-buildkite/internal/provider/mrt_pipeline.go:167 +0x44
+2019-05-10T18:36:55.988-0700 [DEBUG] plugin.terraform-provider-buildkite: reflect.Value.call(0xa331c0, 0xb1e8a0, 0x13, 0xaf26c2, 0x4, 0xc000174e60, 0x3, 0x3, 0xae8c01, 0xc000114380, ...)
+2019-05-10T18:36:55.988-0700 [DEBUG] plugin.terraform-provider-buildkite: 	/home/mart/.goenv/versions/1.12.1/src/reflect/value.go:447 +0x461
+2019-05-10T18:36:55.988-0700 [DEBUG] plugin.terraform-provider-buildkite: reflect.Value.Call(0xa331c0, 0xb1e8a0, 0x13, 0xc000174e60, 0x3, 0x3, 0x3, 0x0, 0x0)
+2019-05-10T18:36:55.988-0700 [DEBUG] plugin.terraform-provider-buildkite: 	/home/mart/.goenv/versions/1.12.1/src/reflect/value.go:308 +0xa4
+2019-05-10T18:36:55.988-0700 [DEBUG] plugin.terraform-provider-buildkite: github.com/apparentlymart/terraform-sdk/internal/dynfunc.WrapFunctionWithReturnValueCty.func2(0xa331c0, 0xb1e8a0, 0xbdef40, 0xc00016e0e8, 0xc0000bd820, 0x3, 0x3)
+2019-05-10T18:36:55.988-0700 [DEBUG] plugin.terraform-provider-buildkite: 	/home/mart/go/1.12.1/pkg/mod/github.com/apparentlymart/terraform-sdk@v0.0.0-20190404151325-f5a43906fd5c/internal/dynfunc/dynfunc.go:159 +0xa7
+2019-05-10T18:36:55.988-0700 [DEBUG] plugin.terraform-provider-buildkite: github.com/apparentlymart/terraform-sdk.managedResourceType.refresh(0xc0001ec110, 0x0, 0xa331c0, 0xb1e898, 0xa331c0, 0xb1e8a0, 0xa331c0, 0xb1e8a8, 0xa331c0, 0xb1e8b0, ...)
+2019-05-10T18:36:55.988-0700 [DEBUG] plugin.terraform-provider-buildkite: 	/home/mart/go/1.12.1/pkg/mod/github.com/apparentlymart/terraform-sdk@v0.0.0-20190404151325-f5a43906fd5c/resource_type.go:185 +0x3c9
+2019-05-10T18:36:55.988-0700 [DEBUG] plugin.terraform-provider-buildkite: github.com/apparentlymart/terraform-sdk.(*Provider).readResource(...)
+2019-05-10T18:36:55.988-0700 [DEBUG] plugin.terraform-provider-buildkite: 	/home/mart/go/1.12.1/pkg/mod/github.com/apparentlymart/terraform-sdk@v0.0.0-20190404151325-f5a43906fd5c/provider.go:96
+2019-05-10T18:36:55.988-0700 [DEBUG] plugin.terraform-provider-buildkite: github.com/apparentlymart/terraform-sdk.(*tfplugin5Server).ReadResource(0xc00031ba80, 0xbde740, 0xc000336000, 0xc000157e00, 0xc00031ba80, 0xc000336000, 0xc000572c28)
+2019-05-10T18:36:55.988-0700 [DEBUG] plugin.terraform-provider-buildkite: 	/home/mart/go/1.12.1/pkg/mod/github.com/apparentlymart/terraform-sdk@v0.0.0-20190404151325-f5a43906fd5c/plugin.go:221 +0x1fd
+2019-05-10T18:36:55.988-0700 [DEBUG] plugin.terraform-provider-buildkite: github.com/apparentlymart/terraform-sdk/internal/tfplugin5._Provider_ReadResource_Handler(0xac0940, 0xc00031ba80, 0xbde740, 0xc000336000, 0xc0001140e0, 0x0, 0xbde740, 0xc000336000, 0x400, 0x7f3eb37a7a00)
+2019-05-10T18:36:55.989-0700 [DEBUG] plugin.terraform-provider-buildkite: 	/home/mart/go/1.12.1/pkg/mod/github.com/apparentlymart/terraform-sdk@v0.0.0-20190404151325-f5a43906fd5c/internal/tfplugin5/tfplugin5.pb.go:2980 +0x23e
+2019-05-10T18:36:55.989-0700 [DEBUG] plugin.terraform-provider-buildkite: google.golang.org/grpc.(*Server).processUnaryRPC(0xc000360000, 0xbe5ae0, 0xc00036c200, 0xc00047e000, 0xc0001cc7b0, 0x1068bd0, 0x0, 0x0, 0x0)
+2019-05-10T18:36:55.989-0700 [DEBUG] plugin.terraform-provider-buildkite: 	/home/mart/go/1.12.1/pkg/mod/google.golang.org/grpc@v1.14.0/server.go:1026 +0x4c3
+2019-05-10T18:36:55.989-0700 [DEBUG] plugin.terraform-provider-buildkite: google.golang.org/grpc.(*Server).handleStream(0xc000360000, 0xbe5ae0, 0xc00036c200, 0xc00047e000, 0x0)
+2019-05-10T18:36:55.989-0700 [DEBUG] plugin.terraform-provider-buildkite: 	/home/mart/go/1.12.1/pkg/mod/google.golang.org/grpc@v1.14.0/server.go:1252 +0x12b5
+2019-05-10T18:36:55.989-0700 [DEBUG] plugin.terraform-provider-buildkite: google.golang.org/grpc.(*Server).serveStreams.func1.1(0xc0001961f0, 0xc000360000, 0xbe5ae0, 0xc00036c200, 0xc00047e000)
+2019-05-10T18:36:55.989-0700 [DEBUG] plugin.terraform-provider-buildkite: 	/home/mart/go/1.12.1/pkg/mod/google.golang.org/grpc@v1.14.0/server.go:699 +0x9f
+2019-05-10T18:36:55.989-0700 [DEBUG] plugin.terraform-provider-buildkite: created by google.golang.org/grpc.(*Server).serveStreams.func1
+2019-05-10T18:36:55.989-0700 [DEBUG] plugin.terraform-provider-buildkite: 	/home/mart/go/1.12.1/pkg/mod/google.golang.org/grpc@v1.14.0/server.go:697 +0xa1
+2019-05-10T18:36:55.991-0700 [DEBUG] plugin: plugin process exited: path=/home/mart/go/bin/terraform-provider-buildkite pid=9549 error="exit status 2"
+2019/05/10 18:36:55 [ERROR] <root>: eval: *terraform.EvalRefresh, err: rpc error: code = Unavailable desc = transport is closing
+2019/05/10 18:36:55 [ERROR] <root>: eval: *terraform.EvalSequence, err: rpc error: code = Unavailable desc = transport is closing
+2019/05/10 18:36:55 [TRACE] [walkRefresh] Exiting eval tree: buildkite_pipeline.example
+2019/05/10 18:36:55 [TRACE] vertex "buildkite_pipeline.example": visit complete
+2019/05/10 18:36:55 [TRACE] vertex "buildkite_pipeline.example": dynamic subgraph encountered errors
+2019/05/10 18:36:55 [TRACE] vertex "buildkite_pipeline.example": visit complete
+2019/05/10 18:36:55 [TRACE] dag/walk: upstream of "provider.buildkite (close)" errored, so skipping
+2019/05/10 18:36:55 [TRACE] statemgr.Filesystem: removing lock metadata file .terraform.tfstate.lock.info
+2019/05/10 18:36:55 [TRACE] statemgr.Filesystem: unlocking terraform.tfstate using fcntl flock
+2019-05-10T18:36:55.992-0700 [DEBUG] plugin: plugin exited

@@ -143,7 +143,7 @@ func apiResponseError(status string) tfsdk.Diagnostic {
 
 func apiWriteErrors(resp *buildkite.Response, err error) tfsdk.Diagnostics {
 	var diags tfsdk.Diagnostics
-	if resp != nil && resp.StatusCode != http.StatusOK && resp.StatusCode != http.StatusCreated && resp.StatusCode != http.StatusAccepted {
+	if resp != nil && resp.StatusCode != http.StatusOK && resp.StatusCode != http.StatusCreated && resp.StatusCode != http.StatusAccepted && resp.StatusCode != http.StatusNoContent {
 		diags = diags.Append(apiResponseError(resp.Status))
 	}
 	if err != nil {
